@@ -572,7 +572,7 @@ const teamMembers = [
         id: 6,
         name: "Mirafgan Eminbayli",
         position: "Frontend Developer",
-        imageUrl: "media/team-6.jpg"
+        imageUrl: "media/team-9.jpg"
     },
     {
         id: 7,
@@ -597,13 +597,13 @@ function renderTeamMembers() {
         const memberCard = document.createElement('div');
         memberCard.className = 'rounded-xl overflow-hidden shadow-lg border-2 border-purple-300';
         memberCard.innerHTML = `
-            <div class="p-4 bg-purple-100 rounded-t-lg">
-                <div class="aspect-w-1 aspect-h-1 w-full mb-4">
-                    <div class="bg-gray-200 rounded-lg w-full h-48 flex items-center justify-center overflow-hidden">
+             <div class="p-4 bg-purple-100 rounded-t-lg">
+                <div class="mb-4">
+                    <div class="bg-white rounded-lg flex items-center justify-center overflow-hidden">
                         <img 
                             src="${member.imageUrl}" 
                             alt="${member.name}" 
-                            class="object-cover w-full h-full"
+                            class="w-auto h-48"
                         >
                     </div>
                 </div>
