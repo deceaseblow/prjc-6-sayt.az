@@ -830,3 +830,144 @@ document.addEventListener('DOMContentLoaded', () => {
         createBlogCards(blogData.length);
     });
 });
+
+   // Sample testimonial data
+   const testimonials = [
+    {
+        id: 1,
+        text: "Sayt.az saytımın hazırlanmasında gözləntilərimi aşdı. Mənim istəklərimi mükəmməl şəkildə əks etdirdi.",
+        author: "Seljan Novruz",
+        position: "CEO",
+        avatar: "https://i.pravatar.cc/150?img=32" // Placeholder avatar
+    },
+    {
+        id: 2,
+        text: "Peşəkar komanda ilə işləmək çox rahat idi. Layihənin bütün mərhələlərində operativ və keyfiyyətli xidmət aldım. Nəticədən tam razıyam.",
+        author: "Aynur Məmmədova",
+        position: "Marketing Director",
+        avatar: "https://i.pravatar.cc/150?img=26" // Placeholder avatar
+    },
+    {
+        id: 3,
+        text: "Saytımızın yenilənməsi prosesi sürətli və keyfiyyətli oldu. Müasir dizayn və funksional imkanlar biznes inkişafımıza töhfə verdi. Tövsiyə edirəm.",
+        author: "Murad Əliyev",
+        position: "Founder",
+        avatar: "https://i.pravatar.cc/150?img=59" // Placeholder avatar
+    }
+];
+
+// Function to render testimonials
+function renderTestimonials() {
+    const testimonialContainer = document.getElementById('testimonialContainer');
+    
+    // Clear existing content
+    testimonialContainer.innerHTML = '';
+    
+    // Create testimonial slides
+    testimonials.forEach((testimonial, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'testimonial-slide';
+        
+        // Hide all slides except the first one initially
+        if (index !== 0) {
+            slide.style.display = 'none';
+        }
+        
+        slide.innerHTML = `
+            <div class="testimonial-content">
+                <h3>Müştərilərdən müsbət rəy</h3>
+                <p>${testimonial.text}</p>
+                <div class="testimonial-author">
+                    <img src="${testimonial.avatar}" alt="${testimonial.author}" class="author-avatar">
+                    <div class="author-info">
+                        <h4>${testimonial.author}</h4>
+                        <p>${testimonial.position}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        testimonialContainer.appendChild(slide);
+    });
+    
+    // Create navigation dots
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'testimonial-dots';
+    
+    testimonials.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        if (index === 0) {
+            dot.classList.add('active');
+        }
+        dot.dataset.index = index;
+        dot.addEventListener('click', () => navigateToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    testimonialContainer.appendChild(dotsContainer);
+    
+    // Create navigation arrows
+    const prevButton = document.createElement('button');
+    prevButton.className = 'nav-button prev';
+    prevButton.innerHTML = '&lt;';
+    prevButton.addEventListener('click', () => navigatePrev());
+    
+    const nextButton = document.createElement('button');
+    nextButton.className = 'nav-button next';
+    nextButton.innerHTML = '&gt;';
+    nextButton.addEventListener('click', () => navigateNext());
+    
+    testimonialContainer.appendChild(prevButton);
+    testimonialContainer.appendChild(nextButton);
+}
+
+// Current slide index
+let currentSlideIndex = 0;
+
+// Navigate to specific slide
+function navigateToSlide(index) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    // Hide all slides
+    slides.forEach(slide => {
+        slide.style.display = 'none';
+    });
+    
+    // Remove active class from all dots
+    dots.forEach(dot => {
+        dot.classList.remove('active');
+    });
+    
+    // Show selected slide and activate corresponding dot
+    slides[index].style.display = 'block';
+    dots[index].classList.add('active');
+    
+    currentSlideIndex = index;
+}
+
+// Navigate to previous slide
+function navigatePrev() {
+    const newIndex = currentSlideIndex === 0 ? testimonials.length - 1 : currentSlideIndex - 1;
+    navigateToSlide(newIndex);
+}
+
+// Navigate to next slide
+function navigateNext() {
+    const newIndex = currentSlideIndex === testimonials.length - 1 ? 0 : currentSlideIndex + 1;
+    navigateToSlide(newIndex);
+}
+
+// Initialize auto-sliding
+function initAutoSlide() {
+    setInterval(() => {
+        navigateNext();
+    }, 5000); // Change slide every 5 seconds
+}
+
+// Initialize everything when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    renderTestimonials();
+    initAutoSlide();
+});
