@@ -3,9 +3,9 @@
 // Dropdown data
 const navData = {
     vebsayt: [
-        { title: 'Saytların Hazırlanması', url: 'calculator.html' },
+        { title: 'Saytların Hazırlanması', url: '№' },
         { title: 'Korporativ Saytlar', url: '#' },
-        { title: 'E-ticarət Saytları', url: '#' },
+        { title: 'Kalkulyator', url: 'calculator.html' },
         { title: 'Şəxsi Saytlar', url: '#' },
         { title: 'Landing Səhifələr', url: '#' }
     ],
