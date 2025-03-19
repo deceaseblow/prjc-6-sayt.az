@@ -535,3 +535,88 @@ document.addEventListener('DOMContentLoaded', function() {
     renderPortfolio();
     renderPagination();
 });
+
+
+const teamMembers = [
+    {
+        id: 1,
+        name: "Ramil Mirzayev",
+        position: "CEO",
+        imageUrl: "media/team-1.jpg"
+    },
+    {
+        id: 2,
+        name: "Rasim Adurahman",
+        position: "Project Manager",
+        imageUrl: "media/team-2.jpg"
+    },
+    {
+        id: 3,
+        name: "Ahmad Rustamov",
+        position: "Team Lead",
+        imageUrl: "media/team-3.jpg"
+    },
+    {
+        id: 4,
+        name: "Murad Aghamedov",
+        position: "Backend Developer",
+        imageUrl: "media/team-4.jpg"
+    },
+    {
+        id: 5,
+        name: "Fuad Mammadov",
+        position: "Front-End Developer",
+        imageUrl: "media/team-5.jpg"
+    },
+    {
+        id: 6,
+        name: "Mirafgan Eminbayli",
+        position: "Frontend Developer",
+        imageUrl: "media/team-6.jpg"
+    },
+    {
+        id: 7,
+        name: "Idrak Mustafazada",
+        position: "Customer Support",
+        imageUrl: "media/team-7.jpg"
+    },
+    {
+        id: 8,
+        name: "Saida Chinani",
+        position: "SMM",
+        imageUrl: "media/team-8.jpg"
+    }
+];
+
+// Function to render team members
+function renderTeamMembers() {
+    const teamGrid = document.getElementById('team-grid');
+    teamGrid.innerHTML = ''; // Clear existing content
+    
+    teamMembers.forEach(member => {
+        const memberCard = document.createElement('div');
+        memberCard.className = 'rounded-xl overflow-hidden shadow-lg border-2 border-purple-300';
+        memberCard.innerHTML = `
+            <div class="p-4 bg-purple-100 rounded-t-lg">
+                <div class="aspect-w-1 aspect-h-1 w-full mb-4">
+                    <div class="bg-gray-200 rounded-lg w-full h-48 flex items-center justify-center overflow-hidden">
+                        <img 
+                            src="${member.imageUrl}" 
+                            alt="${member.name}" 
+                            class="object-cover w-full h-full"
+                        >
+                    </div>
+                </div>
+                <div class="text-center p-2">
+                    <h2 class="text-xl font-bold text-purple-900">${member.name}</h2>
+                    <p class="text-purple-700 font-medium">${member.position}</p>
+                </div>
+            </div>
+        `;
+        teamGrid.appendChild(memberCard);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderTeamMembers();
+});

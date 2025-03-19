@@ -929,7 +929,7 @@ flex-direction: column;
     display: flex;
     top: 130px;
     justify-content: space-around;
-    height: 15vh;
+    height: 13vh;
 
 }
 
@@ -954,6 +954,7 @@ flex-direction: column;
     .stats-container {
         grid-template-columns: repeat(2, 1fr);
         padding: 20px;
+        height:25vh;
     }
     
     .stat-item {
