@@ -370,13 +370,43 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "AGENCY.COM",
             url: "agency.com",
             image: "media/website-3.png"
+        },
+        {
+            name: "WEBSITE.AZ",
+            url: "website.az", 
+            image: "media/website-5.png"
+        },
+        {
+            name: "COMPANY.COM",
+            url: "company.com",
+            image: "media/website-6.png"
+        },
+        {
+            name: "BUSINESS.AZ",
+            url: "business.az",
+            image: "media/website-7.png"
+        },
+        {
+            name: "STORE.AZ",
+            url: "store.az",
+            image: "media/website-2.png"
+        },
+        {
+            name: "BLOG.AZ",
+            url: "blog.az",
+            image: "media/website-1.png"
+        },
+        {
+            name: "AGENCY.COM",
+            url: "agency.com",
+            image: "media/website-3.png"
         }
     ];
     
     const portfolioGrid = document.getElementById('portfolioGrid');
     const pagination = document.getElementById('pagination');
     let currentPage = 1;
-    let itemsPerPage = 2; // Start with 4 items per page
+    let itemsPerPage = 6; // Start with 4 items per page
     
     // Function to render portfolio items
     function renderPortfolio() {
@@ -555,4 +585,64 @@ function renderTeamMembers() {
 
 document.addEventListener('DOMContentLoaded', function() {
     renderTeamMembers();
+});
+
+const blogPosts = [
+    {
+        id: 1,
+        title: "Uğurlu biznes üçün hansı veb trendləri izləməlisən?",
+        image: "media/post-1.jpg",
+        date: "Feb 27, 2025",
+        tags: ["webdesign", "marketing", "sayt"]
+    },
+    {
+        id: 2,
+        title: "DeepSeek AI: Yeni Nəsil Süni İntellekt Aləti",
+        image: "media/post-2.jpg",
+        date: "Feb 6, 2025",
+        tags: ["sayt yaratmaq", "sayt sifarişi", "saytların hazırlanması"]
+    },
+    {
+        id: 3,
+        title: "2025-ci ildə Onlayn Biznesin Trendləri",
+        image: "media/post-3.jpg",
+        date: "Jan 29, 2025",
+        tags: ["marketing", "social", "peşəkar veb dizayn"]
+    }
+];
+function renderBlogPosts() {
+    const blogPostsContainer = document.getElementById('blog-posts');
+    blogPostsContainer.innerHTML = '';
+    
+    blogPosts.forEach(post => {
+        const blogPostElement = document.createElement('div');
+        blogPostElement.className = 'bg-white rounded-xl overflow-hidden shadow-md border-2 border-purple-300 p-4';
+        
+        const tagsHTML = post.tags.map(tag => 
+            `<button class="bg-purple-400 text-white text-xs px-[15px] py-[15px] rounded-full mr-2 mb-2">${tag}</button>`
+        ).join('');
+        
+        blogPostElement.innerHTML = `
+            <div class="rounded-xl overflow-hidden border border-purple-200">
+                <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover rounded-t-xl">
+            </div>
+            <div class="p-4">
+                <h2 class="text-lg font-bold text-purple-900 mb-3">${post.title}</h2>
+                <div class="flex flex-wrap mb-3">
+                    <button class="bg-purple-500 text-white text-xs px-[15px] py-[15px] rounded-full mr-2 mb-2">${post.date}</button>
+                    ${tagsHTML}
+                </div>
+            </div>
+        `;
+        
+        blogPostsContainer.appendChild(blogPostElement);
+    });
+}
+
+document.getElementById('view-all').addEventListener('click', function() {
+    alert('Bütün bloqlar səhifəsinə keçid edilir...');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderBlogPosts();
 });
