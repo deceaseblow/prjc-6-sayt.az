@@ -587,7 +587,164 @@ document.addEventListener('DOMContentLoaded', function() {
     renderTeamMembers();
 });
 
-const blogPosts = [
+// Sample data for the slides
+const slides = [
+    {
+        id: "slide1",
+        title: "Domen nədir? Domen nə üçündür?",
+        youtubeUrl: "https://youtu.be/lnpAcQS6Xz4"
+    },
+    {
+        id: "slide2",
+        title: "Sayt.az-la biznesiniz önə çıxar",
+        youtubeUrl: "https://youtu.be/Cq3V130Qikc"
+    },
+    {
+        id: "slide3",
+        title: "Hosting nədir və necə işləyir?",
+        youtubeUrl: "https://youtu.be/nCq1U5ItZZM?si=ZqROlTri8OinWqGP"
+    }
+];
+
+// Function to extract video ID from YouTube URL
+function extractYouTubeID(url) {
+    const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[7].length === 11) ? match[7] : url.split('/').pop().split('?')[0];
+}
+
+// Current slide index
+let currentSlide = 0;
+const totalSlides = slides.length;
+const slidesPerView = 2; // Show 2 slides at once
+
+// DOM elements
+const swiperWrapper = document.getElementById("swiperWrapper");
+const swiperPagination = document.getElementById("swiperPagination");
+const prevButton = document.querySelector(".swiper-button-prev");
+const nextButton = document.querySelector(".swiper-button-next");
+
+// Initialize swiper
+function initSwiper() {
+    // Create slides
+    slides.forEach(slide => {
+        // Extract video ID from URL
+        const videoId = extractYouTubeID(slide.youtubeUrl);
+        
+        // Get YouTube thumbnail URL (high quality)
+        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        
+        const slideElement = document.createElement("div");
+        slideElement.className = "swiper-slide";
+        slideElement.innerHTML = `
+            <a href="${slide.youtubeUrl}" class="youtube-link" target="_blank">
+                <img src="${thumbnailUrl}" alt="${slide.title}">
+                <div class="play-button"></div>
+                <div class="slide-title">${slide.title}</div>
+                <div class="view-text">İzləmək üçin: YouTube</div>
+            </a>
+        `;
+        swiperWrapper.appendChild(slideElement);
+    });
+
+    // Apply styles to all slides to make them 50% width each
+    const allSlides = document.querySelectorAll('.swiper-slide');
+    allSlides.forEach(slide => {
+        slide.style.flex = '0 0 calc(50% - 10px)';
+        slide.style.maxWidth = 'calc(50% - 10px)';
+        slide.style.margin = '0 5px';
+    });
+
+    // Create pagination bullets
+    slides.forEach((_, index) => {
+        if (index % slidesPerView === 0 || index === slides.length - 1) { // Only create bullets for slide groups
+            const bullet = document.createElement("div");
+            bullet.className = "swiper-pagination-bullet";
+            if (index === 0) {
+                bullet.classList.add("swiper-pagination-bullet-active");
+            }
+            bullet.addEventListener("click", () => goToSlide(index));
+            swiperPagination.appendChild(bullet);
+        }
+    });
+
+    // Set initial position
+    updateSlidePosition();
+}
+
+// Update slide position
+function updateSlidePosition() {
+    // Calculate the correct translation value
+    // For 2 slides per view, we move by 50% increments
+    const translationValue = currentSlide * 50;
+    swiperWrapper.style.transform = `translateX(-${translationValue}%)`;
+    
+    // Update pagination
+    const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+    bullets.forEach((bullet, index) => {
+        const bulletPosition = index * slidesPerView;
+        if (currentSlide === bulletPosition || 
+            (currentSlide === totalSlides - 1 && bulletPosition > currentSlide - slidesPerView)) {
+            bullet.classList.add("swiper-pagination-bullet-active");
+        } else {
+            bullet.classList.remove("swiper-pagination-bullet-active");
+        }
+    });
+}
+
+// Go to specific slide
+function goToSlide(index) {
+    currentSlide = index;
+    // Don't go beyond the last slide
+    if (currentSlide > totalSlides - slidesPerView) {
+        currentSlide = totalSlides - slidesPerView;
+    }
+    updateSlidePosition();
+}
+
+// Go to next slide
+function goToNextSlide() {
+    currentSlide = currentSlide + slidesPerView;
+    // If we've gone beyond the total slides, loop back to the beginning
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    }
+    updateSlidePosition();
+}
+
+// Go to previous slide
+function goToPrevSlide() {
+    currentSlide = currentSlide - slidesPerView;
+    // If we've gone before the first slide, loop to the end
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - slidesPerView;
+        if (currentSlide < 0) currentSlide = 0; // Safeguard
+    }
+    updateSlidePosition();
+}
+
+// Event listeners
+prevButton.addEventListener("click", goToPrevSlide);
+nextButton.addEventListener("click", goToNextSlide);
+
+// Auto slide functionality
+let autoSlideInterval = setInterval(goToNextSlide, 5000);
+
+// Pause auto slide on hover
+swiperWrapper.addEventListener("mouseenter", () => {
+    clearInterval(autoSlideInterval);
+});
+
+swiperWrapper.addEventListener("mouseleave", () => {
+    autoSlideInterval = setInterval(goToNextSlide, 5000);
+});
+
+// Initialize the swiper
+initSwiper();
+
+
+
+const blogData = [
     {
         id: 1,
         title: "Uğurlu biznes üçün hansı veb trendləri izləməlisən?",
@@ -608,41 +765,68 @@ const blogPosts = [
         image: "media/post-3.jpg",
         date: "Jan 29, 2025",
         tags: ["marketing", "social", "peşəkar veb dizayn"]
+    },
+    {
+        id: 4,
+        title: "E-ticarət Saytınızı Necə Optimallaşdıra Bilərsiniz?",
+        image: "media/post-3.jpg",
+        date: "Jan 15, 2025",
+        tags: ["e-ticarət", "marketing", "SEO"]
+    },
+    {
+        id: 5,
+        title: "Mobil Tətbiq və ya Veb Sayt: Hansını Seçməli?",
+        image: "media/post-2.jpg",
+        date: "Jan 3, 2025",
+        tags: ["mobil", "veb dizayn", "tətbiq inkişafı"]
+    },
+    {
+        id: 6,
+        title: "SEO Strategiyaları: 2025 Yenilikləri",
+        image: "media/post-1.jpg",
+        date: "Dec 21, 2024",
+        tags: ["SEO", "marketing", "axtarış motoru"]
     }
 ];
-function renderBlogPosts() {
-    const blogPostsContainer = document.getElementById('blog-posts');
-    blogPostsContainer.innerHTML = '';
+
+// Function to create blog cards
+function createBlogCards(blogsToShow = 3) {
+    const blogContainer = document.getElementById('blog-container');
+    blogContainer.innerHTML = ''; // Clear existing content
     
-    blogPosts.forEach(post => {
-        const blogPostElement = document.createElement('div');
-        blogPostElement.className = 'bg-white rounded-xl overflow-hidden shadow-md border-2 border-purple-300 p-4';
+    // Take only the specified number of blogs
+    const displayBlogs = blogData.slice(0, blogsToShow);
+    
+    displayBlogs.forEach(blog => {
+        // Create card element
+        const blogCard = document.createElement('div');
+        blogCard.className = 'blog-card';
         
-        const tagsHTML = post.tags.map(tag => 
-            `<button class="bg-purple-400 text-white text-xs px-[15px] py-[15px] rounded-full mr-2 mb-2">${tag}</button>`
-        ).join('');
-        
-        blogPostElement.innerHTML = `
-            <div class="rounded-xl overflow-hidden border border-purple-200">
-                <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover rounded-t-xl">
+        // Create HTML structure for the card
+        blogCard.innerHTML = `
+            <div class="blog-image">
+                <img src="${blog.image}" alt="${blog.title}" onerror="this.src='https://via.placeholder.com/350x200?text=${encodeURIComponent(blog.title)}'">
             </div>
-            <div class="p-4">
-                <h2 class="text-lg font-bold text-purple-900 mb-3">${post.title}</h2>
-                <div class="flex flex-wrap mb-3">
-                    <button class="bg-purple-500 text-white text-xs px-[15px] py-[15px] rounded-full mr-2 mb-2">${post.date}</button>
-                    ${tagsHTML}
+            <div class="blog-content">
+                <h3 class="blog-title">${blog.title}</h3>
+                <div class="blog-tags">
+                    <span class="tag date-tag">${blog.date}</span>
+                    ${blog.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                 </div>
             </div>
         `;
         
-        blogPostsContainer.appendChild(blogPostElement);
+        // Add card to container
+        blogContainer.appendChild(blogCard);
     });
 }
 
-document.getElementById('view-all').addEventListener('click', function() {
-    alert('Bütün bloqlar səhifəsinə keçid edilir...');
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    renderBlogPosts();
+// Initialize with 3 blog posts
+document.addEventListener('DOMContentLoaded', () => {
+    createBlogCards(3);
+    
+    // Add event listener for "View All" button
+    document.getElementById('view-all-btn').addEventListener('click', () => {
+        createBlogCards(blogData.length);
+    });
 });

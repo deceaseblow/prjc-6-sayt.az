@@ -513,19 +513,18 @@
         </div>
     </section>
     <section class="section-11">
-        <div class="container mx-auto px-4 py-8 p-10">
-          <div class="headingsss">  <h1 class="text-3xl font-bold text-center text-purple-900 mb-2">Bloqumuza daxil olun</h1>
-            <p class="text-center text-purple-700 mb-12">Vebin inkişafı, Dizaynı və Onlayn Strategiyaları ilə bağlı maraqlı məqalələri kəşf edin</p></div>
-            
-            <div id="blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-            
-            
-        </div>
-        <div class="flex justify-center mt-12" style="margin-top:20px;">
-                <button id="view-all" class="section-11-button bg-purple-500 hover:bg-purple-600 text-white">
-                    Bütün Bloqlar
-                </button>
+        <div class="container">
+            <div class="heading">
+                <h1>Blogumuza daxil olun</h1>
+                <p>Vebin inkişafı, Dizaynı və Onlayn Strategiyaları ilə bağlı maraqlı məqalələri kəşf edin</p>
             </div>
+            
+            <div id="blog-container" class="blog-container">
+                <!-- Blog cards will be dynamically inserted here -->
+            </div>
+            
+            <button class="view-all-btn" id="view-all-btn">Bütün Bloqlar</button>
+        </div>
     </section>
        <!-- Section 8: Videos Section -->
     <section class="section-8">
@@ -537,7 +536,15 @@
                 kolleksiyamıza göz atın. İdeal veb saytınızı qurmaqda sizə necə kömək edə biləcəyimizi
                 öyrənin və uğur hekayəmizdən ilham alın.
             </p></div>
-            
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="swiperWrapper">
+                    <!-- Slides will be inserted here by JavaScript -->
+                </div>
+                <button class="swiper-button-prev">&lt;</button>
+                <button class="swiper-button-next">&gt;</button>
+            </div>
+            <div class="swiper-pagination" id="swiperPagination"></div>
+        
         </div>
     </section>   
     </main>
