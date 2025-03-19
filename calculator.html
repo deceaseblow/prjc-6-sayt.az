@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Price Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .calc-left-one-inside{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <section id="calculator">
+        <div id="calculator-left">
+            <h1>Qiymət Təklifi Al</h1>
+            <div id="calc-left-one">
+                <h3>Statik səhifələr</h3>
+                <div id="calc-left-one-inside">
+                  <div>  
+                    <h4>Neçə statik səhifə olacaq?</h4>
+                    <input type="range" id="staticPageCount">
+                </div>
+                    <div>
+                        <h4>Dizayn mürəkkəblik:</h4>
+                        <div>
+                            <div>Sadə Orta Xüsusi</div>
+                            <input type="range" id="designComplexity">
+                        </div>
+                    </div>
+                   <div> 
+                        <h3>Xərc:</h3>
+                        <h2 id="staticPagesCost">0 səhifə / 0 man</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="calc-left-two">
+                <h3>Veb sayt əlavələri</h3>
+                <div id="calc-left-two-web-more">
+                    <!-- Dynamically added from JS -->
+                </div>
+
+                <div> 
+                    <h3>Xərc:</h3>
+                    <h2 id="webAddonsCost">0 man</h2>
+                </div>
+            </div>
+            <div id="calc-left-three">
+                <h3>Axtarış motorunun optimallaşdırılması</h3>
+                <div id="calc-left-three-web-more">
+                    <!-- Dynamically added from JS -->
+                </div>
+                <div> 
+                    <h3>Xərc:</h3>
+                    <h2 id="seoCost">0 man</h2>
+                </div>
+            </div>
+            <div id="calc-left-four">
+                <h3>Elektron ticarət əlavələri</h3>
+                <div id="calc-left-four-web-more">
+                    <!-- Dynamically added from JS -->
+                </div>
+                <div> 
+                    <h3>Xərc:</h3>
+                    <h2 id="ecommerceCost">0 man</h2>
+                </div>
+            </div>
+
+            <div id="calc-left-five">
+                <h3>Logo dizaynı</h3>
+                <div>Ehtiyac yoxdur
+                    Sadə
+                    Xüsusi</div>
+                <input type="range" id="logoComplexity">
+                <div> 
+                    <h3>Xərc:</h3>
+                    <h2 id="logoCost">0 man</h2>
+                </div>
+            </div>
+        </div>
+        <div id="calculator-right">
+            <div id="calc-right-one">
+               <div> 
+                <h2>Təklifiniz</h2>
+                <div>
+                    <h2 id="summary-staticPages">Statik səhifələr: 0 man</h2>
+                    <h2 id="summary-addons">Əlavələr: 0 man</h2>
+                    <h2 id="summary-seo">SEO: 0 man</h2>
+                    <h2 id="summary-ecommerce">E-ticarət: 0 man</h2>
+                    <h2 id="summary-logo">Logo dizaynı: 0 man</h2>
+                </div>  
+                <hr>
+                <div>
+                    <h2><strong>Qeyd:</strong></h2>
+                    <h2 id="minimum-price">Minimum sayt qiyməti ₼ 450</h2>
+                </div>
+            </div>
+            <div>
+                <h1>Ümumi təxmini dəyəri:</h1>
+                <h1 id="totalPrice">0</h1>
+            </div>
+            <button id="orderButton">Saytınızı indi sifariş edin</button>
+        </div>
+        </div>
+    </section>
+
+    <script src="calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sayt.az</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="navbar_style.css">
+    <link rel="stylesheet" href="style-2.css">
+
+</head>
+
+<body>
+    <header>
+        <!--NAVBAR !!!!!!!!!!!!! fully DONE. -->
+        <div class="container mx-auto">
+            <nav>
+                <div class="logo">
+                    <a href="#index.html"><img src="media/saytaz.svg" alt="sayt-logo"></a>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li class="dropdown" data-dropdown="vebsayt">
+                            <a href="#">Veb sayt <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content" id="vebsayt-dropdown"></div>
+                        </li>
+                        <li class="dropdown" data-dropdown="domen">
+                            <a href="#">Domen <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content" id="domen-dropdown"></div>
+                        </li>
+                        <li class="dropdown" data-dropdown="hosting">
+                            <a href="#">Hosting <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content" id="hosting-dropdown"></div>
+                        </li>
+                        <li class="dropdown" data-dropdown="xidmetler">
+                            <a href="#">Xidmətlər <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content" id="xidmetler-dropdown"></div>
+                        </li>
+                        <li class="dropdown" data-dropdown="sirket">
+                            <a href="#">Şirkət <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content" id="sirket-dropdown"></div>
+                        </li>
+                    </ul>
+                    
+                    <div class="mobile-buttons">
+                        <a href="#" class="btn btn-primary">Qiymət Təklifi Al</a>
+                        <a href="#" class="btn btn-outline">Daxil olun</a>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="dropdown" data-dropdown="currency">
+                        <a href="#" class="icon-link"><i class="fa-solid fa-manat-sign"></i></a>
+                        <div class="currency-dropdown" id="currency-dropdown"></div>
+                    </div>
+                    <div class="dropdown" data-dropdown="language">
+                        <a href="#" class="language-selector">
+                            <img src="media/az.png" alt="Azərbaycan" class="flag-icon">
+                        </a>
+                        <div class="language-dropdown" id="language-dropdown"></div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Qiymət Təklifi Al</a>
+                    <a href="#" class="btn btn-outline">Daxil olun</a>
+                    <div class="burger-menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                   <div>
+                     <h1>Biznesinizi bizimlə rəqəmsal dünyada 
+                        <span class="highlight-container">
+                            <img src="media/easier.svg" alt="purple underline">
+                            <span class="highlight">daha asan</span>
+                        </span> 
+                        yoldan irəliyə apar!
+                    </h1>
+                    <p>Mütəxəssislərdən ibarət komandamız sizə müştəri dəstəyi və texniki yardım göstərmək üçün 24/7 hazırdır.</p>
+                    <a href="#" class="btn btn-primary">Sayt Sifariş Et</a></div>
+                    <a href="index.html">
+                    <div class="relative w-20 h-10 idk overflow-hidden">
+                        <div class="ball absolute left-8 top-1 w-4 h-4 bg-gray-800 rounded-full animate-move"></div>
+                    </div></a>
+                    <style>
+                        @keyframes moveDownFade {
+                          0% { transform: translateY(0); opacity: 1; }
+                          80% { opacity: 0.2; }
+                          100% { transform: translateY(100%); opacity: 0; }
+                        }
+                        
+                        .animate-move {
+                          animation: moveDownFade 2s ease-in-out infinite;
+                        }
+                        
+                        .idk {
+                            background-image: url("media/check.svg");
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            cursor: pointer;
+                            
+                        }
+                        .ball{
+                            opacity: 0.1;
+                        }
+                    </style>
+                </div>
+            </div>
+        </section>
+        <section class="section-2">
+            <div class="section-2-left">
+                <div class="section-2-cards">
+                    <div class="section-2-card">
+                        <p>Tamamlandı</p>
+                        <div class="progress-circle" data-progress="70">
+                            <span>70%</span>
+                        </div>
+                        <h1>Sabina G.</h1>
+                        <p>Designer</p>
+                    </div>
+                    <div class="section-2-card">
+                        <p>Tamamlandı</p>
+                        <div class="progress-circle" data-progress="100">
+                            <span>100%</span>
+                        </div>
+                        <h1>Sabina G.</h1>
+                        <p>Designer</p>
+                    </div>
+                    <div class="section-2-card">
+                        <p>İcradadır</p>
+                        <div class="progress-circle" data-progress="60">
+                            <span>60%</span>
+                        </div>
+                        <h1>Sabina G.</h1>
+                        <p>Designer</p>
+                    </div>
+                </div>
+                <div class="section-2-left-bot">
+                    <div class="sec-2-progress">
+                        <div class="step completed">
+                            <span class="checkmark">✔</span>
+                        </div>
+                        <div class="step active">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="step"></div>
+                    </div>
+                    <div class="step-labels">
+                        <div>Web Design</div>
+                        <div>Back-end</div>
+                        <div>Front-end</div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="section-2-right">
+                <h1>Vebsayt sifarişinizi izləyin</h1>
+                <input type="text" placeholder="Sifariş kodu" style="text-align:center;">
+                <button class="watch-btn">İzlə</button>
+                <p>Sayt.az ilə sifarişlərinizə hər zaman nəzarət edin</p>
+            </div>
+        </section>
+        <section class="section-3">
+            <div class="domain-search-container">
+                <h2 class="search-title">Domen Adını Axtarın</h2>
+                
+                <p class="search-info">
+                    .az domain sifariş etməzdən öncə <a href="#">whois.az</a> saytında yoxlayın
+                </p>
+                
+                <p class="additional-info">
+                    Sayt.az-da .az domenləri yalnız aktiv hosting planı olan müştərilərə qeydiyyatı açıqdır. Davam etməzdən əvvəl bizdən hosting aldığınıza əmin olun...
+                </p>
+                
+                <div class="domain-search-form">
+                    <div class="search-input-container">
+                        <input type="text" id="domainInput" class="domain-input" placeholder="İstədiyiniz domen adını daxil edin">
+                        <div class="error-message" id="errorMessage"></div>
+                    </div>
+                    
+                    <div class="domain-selector" id="domainSelector">
+                        .az
+                        <div class="domain-options" id="domainOptions">
+                            <!-- Domain options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="search-button" id="searchButton">Axtar</button>
+                </div>
+                
+                <div class="domain-extensions">
+                    <div class="extension-item">
+                        <div class="extension-name">.az</div>
+                        <div class="extension-price">₼40/il</div>
+                    </div>
+                    <div class="extension-item">
+                        <div class="extension-name">.com</div>
+                        <div class="extension-price">₼25/il</div>
+                    </div>
+                    <div class="extension-item">
+                        <div class="extension-name">.net</div>
+                        <div class="extension-price">₼30/il</div>
+                    </div>
+                    <div class="extension-item">
+                        <div class="extension-name">.info</div>
+                        <div class="extension-price">₼35/il</div>
+                    </div>
+                    <div class="extension-item">
+                        <div class="extension-name">.biz</div>
+                        <div class="extension-price">₼30/il</div>
+                    </div>
+                    <div class="extension-item">
+                        <div class="extension-name">.org</div>
+                        <div class="extension-price">₼35/il</div>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+        <section class="section-4">
+            <div class="container">
+                <h2 class="section-title">Hostinq Planınızı Seçin</h2>
+                <p class="section-subtitle">Yaxşı Bir Başlanğıc Təhlükəsiz və Güclü Hostinq Tələb Edir</p>
+                
+                <div class="billing-toggle">
+                    <div class="toggle-container">
+                        <div class="toggle-option active" id="monthly">Aylıq</div>
+                        <div class="toggle-option" id="yearly">İllik</div>
+                        <div class="toggle-selected"></div>
+                    </div>
+                </div>
+        
+                <div class="pricing-container">
+                    <div class="pricing-card">
+                        <h3 class="price">₼5<span class="price-period">/ay</span></h3>
+                        <h4 class="plan-name">Ekonomik</h4>
+                        
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">1 Domen</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">3 GB Disk Həcmi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">3 E-mail Hesabı</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Premium müştəri dəstəyi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">SSL Təhlükəsizliyi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Yedəkləmə və bərpa</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text"><span class="unlimited">Limitsiz</span> Trafik</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Təhlükəsizlik Xüsusiyyətləri</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">cPanel</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">FTP Girişi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Fayl İdarəedici</span>
+                            </li>
+                        </ul>
+        
+                        <a href="#" class="btn btn-outline">Sifariş et</a>
+                    </div>
+        
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">ƏN POPULYAR</div>
+                        <h3 class="price">₼10<span class="price-period">/ay</span></h3>
+                        <h4 class="plan-name">Standart</h4>
+                        
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">2 Domen</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">8 GB Disk Həcmi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">5 E-mail Hesabı</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Premium müştəri dəstəyi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">SSL Təhlükəsizliyi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Yedəkləmə və bərpa</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text"><span class="unlimited">Limitsiz</span> Trafik</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Təhlükəsizlik Xüsusiyyətləri</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">cPanel</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">FTP Girişi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Fayl İdarəedici</span>
+                            </li>
+                        </ul>
+        
+                        <a href="#" class="btn btn-primary">Sifariş et</a>
+                    </div>
+        
+                    <div class="pricing-card">
+                        <h3 class="price">₼20<span class="price-period">/ay</span></h3>
+                        <h4 class="plan-name">Professional</h4>
+                        
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">5 Domen</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">14 GB Disk Həcmi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text"><span class="unlimited">Limitsiz</span> E-mail Hesabı</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Premium müştəri dəstəyi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">SSL Təhlükəsizliyi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Yedəkləmə və bərpa</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text"><span class="unlimited">Limitsiz</span> Trafik</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Təhlükəsizlik Xüsusiyyətləri</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">cPanel</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">FTP Girişi</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">Fayl İdarəedici</span>
+                            </li>
+                        </ul>
+        
+                        <a href="#" class="btn btn-outline">Sifariş et</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-5">
+            <div class="container-idk">
+                <div class="section-header">
+                    <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                        <h2 class="section-title">Startuplar</h2>
+                        <p class="section-subtitle">Mütəxəssis məsləhətlərimizlə biznesinizi necə inkişaf etdirəcəyinizi öyrənin.</p>
+                      </div>
+                    <a href="#" class="view-all-btn">
+                        Bütün StartUplar
+                        <span class="arrow">»</span>
+                    </a>
+                </div>
+                
+                <div class="startups-grid">
+                    <div class="startup-card">
+                        <div class="startup-image">
+                            <img src="media/startup-1.png" alt="kredit.az">
+                        </div>
+                        <div class="startup-content">
+                            <h3 class="startup-name">kredit.az</h3>
+                            <p class="startup-description">kredit.az saytı umumi bankların kredit faizləri haqqında məlumatları bir araya toplayır və faydalı məlumatlar təqdim edir.</p>
+                            <a href="#" class="read-more-btn">Ətraflı oxu...</a>
+                        </div>
+                    </div>
+                    
+                    <div class="startup-card">
+                        <div class="startup-image">
+                            <img src="media/startup-2.jpg" alt="paracoin.network">
+                        </div>
+                        <div class="startup-content">
+                            <h3 class="startup-name">paracoin.network</h3>
+                            <p class="startup-description">Para göndər & qəbul et. NFT AI & Sat. Ağıllı müqavilələr hazırla. Birgə Ödənişlər.</p>
+                            <a href="#" class="read-more-btn">Ətraflı oxu...</a>
+                        </div>
+                    </div>
+                    
+                    <div class="startup-card">
+                        <div class="startup-image">
+                            <img src="media/startup-3.png" alt="Sayt.az">
+                        </div>
+                        <div class="startup-content">
+                            <h3 class="startup-name">Sayt.az</h3>
+                            <p class="startup-description">Sayt.az 2004-cü ildən fəaliyyətə başlamışdır. 2004-2016 -cı illər ərzində Azərbaycan internet istifadəçilərinə xidmət göstərmişdir.</p>
+                            <a href="#" class="read-more-btn">Ətraflı oxu...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+          <section class="stats-section">
+        <h2 class="stats-title">Statistikalarımız</h2>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">20+ il</div>
+                <div class="stat-label">Biz Təcrübəmizə Güvənirik</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Məmnun Müştərilər</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Tamamlanan Layihələr</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Peşəkarlar Komandası</div>
+            </div>
+        </div>
+         </section>
+
+         <section class="section-7">
+            <h1>Komandamızın Pərdə Arxası</h1>
+            <p>Komandamızla Tanış Olaq</p>
+            <div class="section-7-cards">
+                <div class="section-7-card">
+                    <img src="" alt="">
+                    <div class="section-7-bot">
+                       <h1>Ramil</h1>
+                       <p>CEO</p>
+                    </div>
+                </div>
+            </div>
+         </section>
+          <!-- Section 8: Videos Section -->
+    <section class="section-8">
+        <div class="container">
+            <h2 class="section-title">Videolarımızı Kəşf Edin</h2>
+            <p class="section-subtitle">Kəşf Edin, Öyrənin və Uğur Qazanın</p>
+            <p class="section-description">
+                Son nailiyyətlərimizi, media çıxışlarımızı və ətraflı təlimlərimizi izləmək üçün video
+                kolleksiyamıza göz atın. İdeal veb saytınızı qurmaqda sizə necə kömək edə biləcəyimizi
+                öyrənin və uğur hekayəmizdən ilham alın.
+            </p>
+            
+            <div class="video-slider">
+                <button class="slider-arrow prev">&#10094;</button>
+                <div class="video-slider-wrapper">
+                    <div class="video-slide">
+                        <div class="video-container">
+                            <iframe src="about:blank" data-src="https://www.youtube.com/embed/placeholder1" title="Domen nədir? Domen nə üçündür?" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="video-slide">
+                        <div class="video-container">
+                            <iframe src="about:blank" data-src="https://www.youtube.com/embed/placeholder2" title="Sayt.az-la biznesini önə çıxar" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-arrow next">&#10095;</button>
+                
+                <div class="slider-dots">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 9: Testimonials Section -->
+    <section class="section-9">
+        <div class="container">
+            <h2 class="section-title">Müştərilərimizin Rəyləri</h2>
+            <p class="section-subtitle">Müştərilərin fikirləri</p>
+            
+            <div class="testimonial-slider">
+                <button class="slider-arrow prev">&#10094;</button>
+                <div class="testimonial-slider-wrapper">
+                    <div class="testimonial-slide">
+                        <h3 class="testimonial-title">Müştərilərdən müsbət rəy</h3>
+                        <p class="testimonial-text">
+                            Veb saytımı hazırlamaq üçün Sayt.az-ı seçmək biznesim üçün verdiyim ən yaxşı qərar idi.
+                        </p>
+                        
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="/api/placeholder/60/60" alt="Hikmat Taghiyev" />
+                            </div>
+                            <div class="author-info">
+                                <p class="author-name">Hikmat Taghiyev</p>
+                                <p class="author-position">Accountant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-arrow next">&#10095;</button>
+                
+                <div class="slider-dots">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section">
+        <div class="container">
+            <h2 class="portfolio-title">Son islerimiz</h2>
+            <p>Paylaşmaqdan Qürur Duyuruq</p>
+            
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Portfolio items will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <!-- Pagination buttons will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+        
+    </main>
+
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Logo and description section -->
+                <div class="footer-logo-section">
+                    <a href="/" class="footer-logo"><img src="media/saytaz.svg" alt=""></a>
+                    <p class="footer-description">
+                        Sayt.az - Web saytların hazırlanması, Domain, Hosting satışı, SEO, SMM və texniki xidmətlər təklif edir.
+                    </p>
+                    
+                    <!-- Social media section -->
+                    <div class="footer-social">
+                        <p class="footer-social-title">Bizi izləyin :</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hosting & Domain menu -->
+                <div class="footer-menu">
+                    <h3 class="footer-menu-title">HOSTİNQ & DOMEN</h3>
+                    <ul class="footer-menu-list">
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-link">Domen</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-link">Veb Hostinq</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-link">VPS Hostinq</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-link">Server</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Company menu -->
+                <div class="footer-menu">
+                    <h3 class="footer-menu-title">ŞİRKƏT</h3>
+                    <ul class="footer-menu-list">
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-link">Haqqımızda</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-link">Əlaqə</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-link">Bloq</a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-link">Portfolio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom section with copyright and contact -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © Copyright 2004-2025 © Sayt.az . Bütün Hüquqlar Qorunur.
+                </div>
+                <div class="footer-contact">
+                    <a href="tel:+994703300004" class="contact-item">
+                        <i class="fas fa-phone"></i> +(99470) 330-00-04
+                    </a>
+                    <a href="mailto:support@sayt.az" class="contact-item">
+                        <i class="fas fa-envelope"></i> support@sayt.az
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
