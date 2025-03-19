@@ -1392,6 +1392,12 @@ flex-direction: column;
     color: #4b0082;
     margin-bottom: 50px;
 }
+.portfolio-p{
+    text-align: center;
+    font-size:16px;
+    font-weight: 700;
+    margin:15px 0;
+}
 
 /* Portfolio grid */
 .portfolio-grid {
