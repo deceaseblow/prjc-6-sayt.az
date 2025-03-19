@@ -388,52 +388,52 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             name: "WISHER.AZ",
             url: "wisher.az",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=WISHER.AZ"
+            image: "media/website-1.png"
         },
         {
             name: "IMEXCOMMODITIES.COM",
             url: "imexcommodities.com",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=IMEX+COMMODITIES"
+            image: "media/website-2.png"
         },
         {
             name: "EXAMPLE.COM",
             url: "example.com",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=EXAMPLE"
+            image: "media/website-3.png"
         },
         {
             name: "PORTFOLIO.AZ",
             url: "portfolio.az",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=PORTFOLIO"
+            image: "media/website-4.png"
         },
         {
             name: "WEBSITE.AZ",
             url: "website.az", 
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=WEBSITE"
+            image: "media/website-5.png"
         },
         {
             name: "COMPANY.COM",
             url: "company.com",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=COMPANY"
+            image: "media/website-6.png"
         },
         {
             name: "BUSINESS.AZ",
             url: "business.az",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=BUSINESS"
+            image: "media/website-7.png"
         },
         {
             name: "STORE.AZ",
             url: "store.az",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=STORE"
+            image: "media/website-2.png"
         },
         {
             name: "BLOG.AZ",
             url: "blog.az",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=BLOG"
+            image: "media/website-1.png"
         },
         {
             name: "AGENCY.COM",
             url: "agency.com",
-            image: "https://via.placeholder.com/600x300/ffffff/333333?text=AGENCY"
+            image: "media/website-3.png"
         }
     ];
     
