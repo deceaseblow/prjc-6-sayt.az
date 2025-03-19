@@ -929,6 +929,7 @@ flex-direction: column;
     display: flex;
     top: 130px;
     justify-content: space-around;
+    height: 15vh;
 
 }
 
